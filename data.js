@@ -91,3 +91,41 @@ export const bottemNavElement = [
     icon: AiOutlineMail,
   },
 ];
+
+export const rigtData = [
+  {
+    image: "profile3.jpeg",
+    name: "Ksi",
+    data: " @ksi",
+  },
+  {
+    image: "profile4.jpg",
+    name: "vikkstar",
+    data: " @vikkstar123",
+  },
+  {
+    image: "profile5.jpg",
+    name: "miniminter",
+    data: " @simon",
+  },
+  {
+    image: "profile6.jpg",
+    name: "zerkaa",
+    data: " @zerkaa",
+  },
+  {
+    image: "profile7.jpeg",
+    name: "harry",
+    data: " @wroetoshaw",
+  },
+  {
+    image: "profile8.jpg",
+    name: "toby",
+    data: "@tobjizzle",
+  },
+  {
+    image: "profile9.jpg",
+    name: "ethan",
+    data: " @behzingagram",
+  },
+];

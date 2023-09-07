@@ -55,8 +55,8 @@ const LeftSidebar = () => {
 
       <div className="flex gap-4 items-center w-full hover:bg-slate-900 rounded-full px-1 py-2">
         <Image
-          className="w-11 rounded-full"
-          src="/logo.webp"
+          className="w-11 h-11 rounded-full"
+          src="/profile3.jpeg"
           width={100}
           height={100}
           alt="Picture of the author"

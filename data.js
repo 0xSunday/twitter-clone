@@ -1,6 +1,6 @@
 import { BiHomeCircle } from "react-icons/bi";
 import { BsSearch } from "react-icons/bs";
-import { GrNotification } from "react-icons/gr";
+import { IoNotificationsOutline } from "react-icons/io5";
 import { AiOutlineMail } from "react-icons/ai";
 import { RiFileList2Line } from "react-icons/ri";
 import { BsBookmark } from "react-icons/bs";
@@ -11,43 +11,53 @@ import { CiCircleMore } from "react-icons/ci";
 export const sidebarElement = [
   {
     name: "Home",
+    route: "/",
     icon: BiHomeCircle,
   },
   {
     name: "Explore",
+    route: "/explore",
     icon: BsSearch,
   },
   {
     name: "Notifications",
-    icon: GrNotification,
+    route: "/notifications",
+    icon: IoNotificationsOutline,
   },
   {
     name: "Messages",
+    route: "/messages",
     icon: AiOutlineMail,
   },
   {
     name: "Lists",
+    route: "/lists",
     icon: RiFileList2Line,
   },
   {
     name: "Bookmarks",
+    route: "/bookmarks",
     icon: BsBookmark,
   },
   {
     name: "Communities",
+    route: "/communities",
     icon: BsPeople,
   },
   {
     name: "Varified",
-    // icon: Varified,
+    route: "/varified",
+    // icon: CgProfile,
   },
 
   {
     name: "Profile",
+    route: "/profile",
     icon: CgProfile,
   },
   {
     name: "More",
+    route: "/more",
     icon: CiCircleMore,
   },
 ];

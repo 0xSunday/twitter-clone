@@ -1,17 +1,45 @@
 import Image from "next/image";
 import React from "react";
+import { sidebarElement } from "../data";
+import Link from "next/link";
 
 const LeftSidebar = () => {
   return (
-    <div className=" hidden md:flex w-[16.5rem] mx-3 pt-10 pb-4 text-black  border-r-2 h-[100vh]  justify-between flex-col">
+    <div className="hidden md:flex w-[16.5rem] mx-3 pt-4 pb-4  border-r-[2px] border-r-[rgb(29,31,36)] h-[100vh] flex-col">
       <div>
         <Image
-          className="w-12"
+          className="w-11"
           src="/logo.webp"
           width={500}
           height={500}
           alt="Picture of the author"
         />
+      </div>
+
+      <div className="py-4">
+        {sidebarElement.map((d, index) => (
+          <Link href={d.route} key={index} className="flex gap-3  rounded-3xl ">
+            <div className="flex gap-5 pr-5  pl-2  py-[11px] rounded-3xl hover:bg-[rgb(22,24,28)]">
+              {d.name === "Varified" ? (
+                <Image
+                  className="w-9 h-6 -ml-2 rounded-full"
+                  src="/logo.webp"
+                  width={500}
+                  height={500}
+                  alt="Picture of the author"
+                />
+              ) : (
+                <d.icon
+                  size={28}
+                  color="white"
+                  className="hover:scale-105 transition-transform duration-300 ease-out"
+                />
+              )}
+
+              <h1 className="text-center text-[19px]">{d.name}</h1>
+            </div>
+          </Link>
+        ))}
       </div>
     </div>
   );

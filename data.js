@@ -8,6 +8,8 @@ import { BsPeople } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
 import { CiCircleMore } from "react-icons/ci";
 
+import { BsPencilSquare } from "react-icons/bs";
+
 export const sidebarElement = [
   {
     name: "Home",
@@ -59,5 +61,33 @@ export const sidebarElement = [
     name: "More",
     route: "/more",
     icon: CiCircleMore,
+  },
+];
+
+export const bottemNavElement = [
+  {
+    name: "Home",
+    route: "/",
+    icon: BiHomeCircle,
+  },
+  {
+    name: "Explore",
+    route: "/explore",
+    icon: BsSearch,
+  },
+  {
+    name: "Tweet",
+    route: "/varified",
+    icon: BsPencilSquare,
+  },
+  {
+    name: "Notifications",
+    route: "/notifications",
+    icon: IoNotificationsOutline,
+  },
+  {
+    name: "Messages",
+    route: "/messages",
+    icon: AiOutlineMail,
   },
 ];

@@ -5,8 +5,8 @@ import Link from "next/link";
 
 const LeftSidebar = () => {
   return (
-    <div className="flex justify-between w-[16.5rem] mx-3 pt-4 pb-4  border-r-[2px] border-r-[rgb(29,31,36)] h-[100vh] flex-col">
-      <div className="hidden md:flex flex-col">
+    <div className="hidden xl:flex justify-between w-[16.5rem] mx-3 pt-4 pb-4  border-r-[2px] border-r-[rgb(29,31,36)] h-[100vh] flex-col">
+      <div className="flex flex-col">
         <div>
           <Image
             className="w-11"

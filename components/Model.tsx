@@ -60,29 +60,30 @@ const Model: React.FC<ModelProps> = ({
         >
           {/* header */}
 
-          <div className="flex  items-center justify-between p-10 rounded-t ">
+          <div className="flex flex-1 items-center justify-between p-10 rounded-t ">
             <button
               onClick={handleClose}
-              className="w-full  p-1  mr-auto border-0 text-white hover:opacity-70 transition"
+              className="  p-1 flex justify-center items-center  border-0 text-white hover:opacity-70 transition"
             >
               <AiOutlineClose />
             </button>
-            <div className="w-full  -ml-16">
-              {titleImage ? (
+
+            <div className="flex items-center justify-center rounded-t ">
+              <h3 className="font-bold text-3xl">{title}</h3>
+            </div>
+            <div>
+              {titleImage && (
                 <Image
-                  className="w-16  rounded-full"
+                  className="w-11  rounded-full"
                   src={titleImage}
                   width={100}
                   height={100}
                   alt="Picture of the author"
                 />
-              ) : (
-                <div className="flex items-center justify-between rounded-t ">
-                  <h3 className="font-bold text-2xl">{title}</h3>
-                </div>
               )}
             </div>
           </div>
+
           {/* body */}
           <div className="relative p-10 flex-auto">{body}</div>
 
@@ -95,8 +96,8 @@ const Model: React.FC<ModelProps> = ({
               fullWidth
               large
               onClick={handleSubmit}
-              
             />
+            {footer}
           </div>
         </div>
       </div>

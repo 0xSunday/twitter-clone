@@ -18,8 +18,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Model />
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Model actionLable="Sumbit"  titleImage="/logo.webp" />
+        {children}
+      </body>
     </html>
   );
 }

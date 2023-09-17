@@ -12,7 +12,7 @@ export default function Home() {
       <LeftSidebar />
       <LeftSidebarIons />
       <MiddleSection />
-      <RightSection />
+      {/* <RightSection /> */}
     </div>
   );
 }

@@ -90,7 +90,7 @@ const Model: React.FC<ModelProps> = ({
           {/* footer */}
           <div className="flex flex-col gap-2 p-10">
             <Botton
-              disabled
+              
               lable={actionLable}
               secondary
               fullWidth

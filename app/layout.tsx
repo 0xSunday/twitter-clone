@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import LoginModel from "@/components/models/LoginModel";
 import RegisterModel from "@/components/models/ResgisterModel";
-import { SessionProvider } from "next-auth/react";
+import SessionProvider from "@/components/SessionProvider";
 import { getServerSession } from "next-auth";
 import { Toaster } from "react-hot-toast";
 

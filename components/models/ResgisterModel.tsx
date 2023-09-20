@@ -5,7 +5,8 @@ import Model from "../Model";
 import useRegisterModel from "../hooks/useResgisterModel";
 import useLoginModel from "../hooks/useLoginModel";
 import axios from "axios";
-
+import { toast } from "react-hot-toast";
+import { signIn } from "next-auth/react";
 const RegisterModel = () => {
   const loginModel = useLoginModel();
   const registerModel = useRegisterModel();
@@ -32,10 +33,18 @@ const RegisterModel = () => {
         email,
         password,
       });
+      toast.success("Accout created");
 
+      signIn("credentials", {
+        name,
+        userName,
+        email,
+        password,
+      });
       registerModel.onClose();
     } catch (error) {
       console.log(error);
+      toast.error("Something went wrong");
     } finally {
       setIsLoading(false);
     }

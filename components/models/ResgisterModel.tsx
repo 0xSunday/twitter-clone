@@ -4,6 +4,7 @@ import Input from "../Input";
 import Model from "../Model";
 import useRegisterModel from "../hooks/useResgisterModel";
 import useLoginModel from "../hooks/useLoginModel";
+import axios from "axios";
 
 const RegisterModel = () => {
   const loginModel = useLoginModel();
@@ -25,13 +26,20 @@ const RegisterModel = () => {
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
-      registerModel.onClose;
+      await axios.post("/api/register", {
+        name,
+        userName,
+        email,
+        password,
+      });
+
+      registerModel.onClose();
     } catch (error) {
       console.log(error);
     } finally {
       setIsLoading(false);
     }
-  }, [registerModel]);
+  }, [registerModel, name, userName, email, password]);
 
   const bodyContent = (
     <div className="flex flex-col gap-3">

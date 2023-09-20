@@ -3,7 +3,7 @@ import React, { useCallback, useState } from "react";
 import Input from "../Input";
 import Model from "../Model";
 import useLoginModel from "../hooks/useLoginModel";
-import useRegisterModel from "../hooks/useResgisterModel";
+import useRegisterModel from "../hooks/useRegisterModel";
 
 const LoginModel = () => {
   const loginModel = useLoginModel();

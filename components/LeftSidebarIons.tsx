@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 // import { FaRegPenToSquare } from "react-icons/fa";
 import { BsPencilSquare } from "react-icons/bs";
-import useRegisterModel from "./hooks/useResgisterModel";
+import useRegisterModel from "./hooks/useRegisterModel";
 
 const LeftSidebarIons = () => {
   const registerModel = useRegisterModel();

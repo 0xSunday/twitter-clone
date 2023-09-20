@@ -1,18 +1,20 @@
 "use client";
+
 import React, { useCallback, useState } from "react";
 import Input from "../Input";
 import Model from "../Model";
-import useRegisterModel from "../hooks/useResgisterModel";
-import useLoginModel from "../hooks/useLoginModel";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { signIn } from "next-auth/react";
+import useLoginModel from "../hooks/useLoginModel";
+import useRegisterModel from "../hooks/useRegisterModel";
+
 const RegisterModel = () => {
   const loginModel = useLoginModel();
   const registerModel = useRegisterModel();
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [userName, setUserName] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -27,28 +29,44 @@ const RegisterModel = () => {
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
-      await axios.post("/api/register", {
-        name,
-        userName,
-        email,
-        password,
-      });
-      toast.success("Accout created");
+      console.log("useRegister");
+      // const response = await fetch("/api/register", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({
+      //     name,
+      //     username,
+      //     email,
+      //     password,
+      //   }),
+      // });
 
-      signIn("credentials", {
-        name,
-        userName,
-        email,
-        password,
+      // if (!response.ok) {
+      //   throw new Error(`Network response was not ok: ${response.status}`);
+      // }
+      await axios.post("api/register", {
+        name: name,
+        username: username,
+        email: email,
+        password: password,
       });
+
+      toast.success("Account created");
+
+      // await signIn("credentials", {
+      //   email,
+      //   password,
+      // });
       registerModel.onClose();
     } catch (error) {
-      console.log(error);
+      console.error("error at useRegister", error);
       toast.error("Something went wrong");
     } finally {
       setIsLoading(false);
     }
-  }, [registerModel, name, userName, email, password]);
+  }, [registerModel, name, username, email, password]);
 
   const bodyContent = (
     <div className="flex flex-col gap-3">
@@ -60,9 +78,9 @@ const RegisterModel = () => {
       />
 
       <Input
-        placeHolder="userName"
-        onChange={(e) => setUserName(e.target.value)}
-        value={userName}
+        placeHolder="username"
+        onChange={(e) => setUsername(e.target.value)}
+        value={username}
         disabled={isLoading}
       />
 
@@ -84,12 +102,11 @@ const RegisterModel = () => {
   const footerContent = (
     <div className="text-neutral-400 text-center mt-4 ">
       <p>
-        Already an accout ? {}
+        Already an account?{" "}
         <span
           onClick={onToggle}
           className="text-white cursor-pointer hover:underline"
         >
-          {" "}
           sign in
         </span>
       </p>
@@ -101,7 +118,7 @@ const RegisterModel = () => {
       titleImage="/logo.webp"
       disabled={isLoading}
       isOpen={registerModel.isOpen}
-      title="Create an accout"
+      title="Create an account"
       actionLable="Register"
       onClose={registerModel.onClose}
       onSubmit={onSubmit}

@@ -60,7 +60,7 @@ const RegisterModel = () => {
       />
 
       <Input
-        placeHolder="username"
+        placeHolder="userName"
         onChange={(e) => setUserName(e.target.value)}
         value={userName}
         disabled={isLoading}

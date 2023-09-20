@@ -1,10 +1,14 @@
+"use client";
 import React from "react";
 import { sidebarElement } from "../data";
 import Link from "next/link";
 import Image from "next/image";
 // import { FaRegPenToSquare } from "react-icons/fa";
 import { BsPencilSquare } from "react-icons/bs";
+import useRegisterModel from "./hooks/useResgisterModel";
+
 const LeftSidebarIons = () => {
+  const registerModel = useRegisterModel();
   return (
     <div>
       <div className="xl:hidden sm:flex hidden justify-between w-[4rem] mx-3 pt-4 pb-4  border-r-[2px] border-r-[rgb(29,31,36)] h-[100vh] flex-col">
@@ -46,7 +50,10 @@ const LeftSidebarIons = () => {
               </Link>
             ))}
           </div>
-          <div className="w-14 h-14 rounded-full items-center bg-blue-400 hover:opacity-90 flex justify-center">
+          <div
+            onClick={() => registerModel.onOpen()}
+            className="w-14 h-14 rounded-full items-center bg-blue-400 hover:opacity-90 flex justify-center"
+          >
             <BsPencilSquare size={28} />
           </div>
         </div>

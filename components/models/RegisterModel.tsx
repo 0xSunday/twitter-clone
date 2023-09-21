@@ -26,31 +26,59 @@ const RegisterModel = () => {
     loginModel.onOpen();
   }, [isLoading, registerModel, loginModel]);
 
+  // const onSubmit = async () => {
+  //   try {
+  //     setIsLoading(true);
+  //     console.log("useRegister");
+
+  //     const resposnse = await fetch("/api/register", {
+  //       method: "POST",
+  //       body: JSON.stringify({
+  //         name: name,
+  //         username: username,
+  //         email: email,
+  //         password: password,
+  //       }),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
+  //     // const data = resposnse.json();
+  //     if (!resposnse.ok) {
+  //       throw new Error("something went wong !");
+  //     }
+  //     // await axios.post("/api/register", {
+  //     //   name: name,
+  //     //   username: username,
+  //     //   email: email,
+  //     //   password: password,
+  //     // });
+
+  //     toast.success("Account created");
+
+  //     // await signIn("credentials", {
+  //     //   email,
+  //     //   password,
+  //     // });
+  //     registerModel.onClose();
+  //   } catch (error) {
+  //     console.error("error at useRegister", error);
+  //     toast.error("Something went wrong");
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+
   const onSubmit = useCallback(async () => {
     try {
       setIsLoading(true);
       console.log("useRegister");
-      // const response = await fetch("/api/register", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify({
-      //     name,
-      //     username,
-      //     email,
-      //     password,
-      //   }),
-      // });
 
-      // if (!response.ok) {
-      //   throw new Error(`Network response was not ok: ${response.status}`);
-      // }
-      await axios.post("api/register", {
-        name: name,
-        username: username,
-        email: email,
-        password: password,
+      await axios.post("/api/registers/", {
+        name,
+        username,
+        email,
+        password,
       });
 
       toast.success("Account created");

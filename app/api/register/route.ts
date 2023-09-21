@@ -7,13 +7,13 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
- console.log("register")
+  //  console.log("register")
   if (req.method !== "POST") {
     return res.status(405).end();
   }
 
   try {
-    const { name, username, email, password } = req.body;
+    const { name, username, email, password } = await req.body;
 
     const hashedPassword = await bcrypt.hash(password, 12);
 
@@ -25,7 +25,7 @@ export default async function handler(
         hashedPassword: hashedPassword,
       },
     });
-    console.log("User created:", user); 
+    console.log("User created:", user);
     return res.status(200).json(user);
   } catch (error) {
     console.error("Error:", error);
